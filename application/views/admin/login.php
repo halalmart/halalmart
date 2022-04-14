@@ -2,12 +2,12 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-success">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="" class="h1"><b><?= $title; ?></b></a>
         </div>
         <div class="card-body">
             <?= $this->session->flashdata('message'); ?>
 
-            <form action="<?= base_url('penjual/auth'); ?>" method="post">
+            <form action="<?= base_url('admin/auth'); ?>" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Email" id="email" name="email">
                     <div class="input-group-append">
@@ -37,13 +37,6 @@
 
             <p class="mb-1">
                 <a href="forgot-password.html">Lupa Password</a>
-            </p>
-            <p class="mb-1">
-                <a href="<?= base_url('auth/'); ?>reg_pembeli" class="text-center">Daftar Sebagai User</a>
-            </p>
-            <p class="mb-1">
-                <a href="<?= base_url('auth/'); ?>reg_penjual" class="text-center">Daftar Sebagai Penjual</a>
-            </p>
         </div>
         <!-- /.card-body -->
     </div>

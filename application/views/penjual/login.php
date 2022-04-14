@@ -2,7 +2,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-success">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="../../index2.html" class="h1"><b><?= $title; ?></b></a>
         </div>
         <div class="card-body">
             <?= $this->session->flashdata('message'); ?>
@@ -39,10 +39,7 @@
                 <a href="forgot-password.html">Lupa Password</a>
             </p>
             <p class="mb-1">
-                <a href="<?= base_url('auth/'); ?>reg_pembeli" class="text-center">Daftar Sebagai User</a>
-            </p>
-            <p class="mb-1">
-                <a href="<?= base_url('auth/'); ?>reg_penjual" class="text-center">Daftar Sebagai Penjual</a>
+                <a href="<?= base_url('penjual/auth/'); ?>reg_penjual" class="text-center">Daftar Sebagai Penjual</a>
             </p>
         </div>
         <!-- /.card-body -->
