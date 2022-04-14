@@ -30,7 +30,10 @@
                                         <div class="card-header">
                                             <h3 class="card-title">DataTable with default features</h3>
                                         </div>
-                                        <a href="<?= base_url('penjual/R_penjual/add/') ?>">tambah</a>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                        <a href="<?= base_url('admin/penjual/add/') ?>">tambah</a>
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <table id="example1" class="table table-bordered table-striped">
@@ -49,16 +52,16 @@
                                                 <tbody>
                                                     <?php
                                                     $no = 1;
-                                                    foreach ($penjual as $u) {
+                                                    foreach ($penjual as $u) :
                                                     ?>
                                                         <tr>
                                                             <td><?= $no++ ?></td>
-                                                            <td><?= $u->foto ?></td>
+                                                            <td><?= $u->image ?></td>
                                                             <td><?= $u->id_penjual ?></td>
-                                                            <td><?= $u->nama ?></td>
+                                                            <td><?= $u->name ?></td>
                                                             <td><?= $u->jenis_kelamin ?></td>
-                                                            <td><?= $u->alamat ?></td>
-                                                            <td><?= $u->kota ?></td>
+                                                            <td><?= $u->address ?></td>
+                                                            <td><?= $u->city ?></td>
                                                             <td>
 
                                                                 <a href="<?= base_url('penjual/R_penjual/edit/' . $u->id); ?>">edit</a>
@@ -66,9 +69,10 @@
 
                                                             </td>
                                                         </tr>
-                                                    <?php } ?>
+                                                    <?php endforeach; ?>
                                                 </tbody>
                                             </table>
+
                                         </div>
                                         <!-- /.card-body -->
                                     </div>
@@ -86,3 +90,11 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+        <script>
+            var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function() {
+                myInput.focus()
+            })
+        </script>
