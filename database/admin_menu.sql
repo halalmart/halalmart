@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2022 at 09:16 AM
+-- Generation Time: Apr 15, 2022 at 09:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,33 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori produk`
+-- Table structure for table `admin_menu`
 --
 
-CREATE TABLE `kategori produk` (
-  `id` int(2) NOT NULL,
-  `icon` varchar(255) NOT NULL,
-  `nama_kategori` varchar(255) NOT NULL,
-  `date_input` datetime NOT NULL
+CREATE TABLE `admin_menu` (
+  `id` int(11) NOT NULL,
+  `id_menu` int(11) NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `url` varchar(128) NOT NULL,
+  `icon` varchar(128) NOT NULL,
+  `role_id` varchar(10) NOT NULL,
+  `is_active` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori produk`
+-- Dumping data for table `admin_menu`
 --
 
-INSERT INTO `kategori produk` (`id`, `icon`, `nama_kategori`, `date_input`) VALUES
-(1, '', 'herbs products', '2022-04-12 05:34:23'),
-(2, '', 'health food & beverages', '2022-04-12 05:35:12'),
-(3, '', 'cosmetics & home care', '2022-04-12 05:36:06');
+INSERT INTO `admin_menu` (`id`, `id_menu`, `title`, `url`, `icon`, `role_id`, `is_active`) VALUES
+(1, 1, 'Data Penjual', 'admin/penjual', 'fas fa-fw fa-user', '', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kategori produk`
+-- Indexes for table `admin_menu`
 --
-ALTER TABLE `kategori produk`
+ALTER TABLE `admin_menu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +59,10 @@ ALTER TABLE `kategori produk`
 --
 
 --
--- AUTO_INCREMENT for table `kategori produk`
+-- AUTO_INCREMENT for table `admin_menu`
 --
-ALTER TABLE `kategori produk`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `admin_menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -24,39 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjual`
+-- Table structure for table `user_role`
 --
 
-CREATE TABLE `penjual` (
+CREATE TABLE `user_role` (
   `id` int(11) NOT NULL,
-  `id_penjual` varchar(8) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  `jenis_kelamin` varchar(128) NOT NULL,
-  `city` varchar(128) NOT NULL,
-  `address` varchar(128) NOT NULL,
-  `image` varchar(128) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `is_active` int(11) NOT NULL,
-  `date_created` int(11) NOT NULL
+  `role` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penjual`
+-- Dumping data for table `user_role`
 --
 
-INSERT INTO `penjual` (`id`, `id_penjual`, `email`, `password`, `name`, `jenis_kelamin`, `city`, `address`, `image`, `role_id`, `is_active`, `date_created`) VALUES
-(6, '87654321', 'kidi@diki.com', '$2y$10$2WjZKd96BvSV7/x7PpaZauWu778GJag7s/iI0vIt/zRohySoIrA1a', 'afan', 'laki-laki', 'Semarang', 'suruh', 'default.jpg', 2, 1, 1649919516);
+INSERT INTO `user_role` (`id`, `role`) VALUES
+(1, 'admin'),
+(2, 'penjual'),
+(3, 'stokis'),
+(4, 'pembeli');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `penjual`
+-- Indexes for table `user_role`
 --
-ALTER TABLE `penjual`
+ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -64,10 +57,10 @@ ALTER TABLE `penjual`
 --
 
 --
--- AUTO_INCREMENT for table `penjual`
+-- AUTO_INCREMENT for table `user_role`
 --
-ALTER TABLE `penjual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `user_role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

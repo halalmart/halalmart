@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2022 at 09:16 AM
+-- Generation Time: Apr 15, 2022 at 09:18 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,33 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori produk`
+-- Table structure for table `product`
 --
 
-CREATE TABLE `kategori produk` (
-  `id` int(2) NOT NULL,
-  `icon` varchar(255) NOT NULL,
-  `nama_kategori` varchar(255) NOT NULL,
-  `date_input` datetime NOT NULL
+CREATE TABLE `product` (
+  `id` int(6) NOT NULL,
+  `id_kategori` varchar(128) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `harga` varchar(255) NOT NULL,
+  `khasiat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kategori produk`
---
-
-INSERT INTO `kategori produk` (`id`, `icon`, `nama_kategori`, `date_input`) VALUES
-(1, '', 'herbs products', '2022-04-12 05:34:23'),
-(2, '', 'health food & beverages', '2022-04-12 05:35:12'),
-(3, '', 'cosmetics & home care', '2022-04-12 05:36:06');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kategori produk`
+-- Indexes for table `product`
 --
-ALTER TABLE `kategori produk`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +51,10 @@ ALTER TABLE `kategori produk`
 --
 
 --
--- AUTO_INCREMENT for table `kategori produk`
+-- AUTO_INCREMENT for table `product`
 --
-ALTER TABLE `kategori produk`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `product`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
