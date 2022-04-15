@@ -1,23 +1,3 @@
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
-
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -30,10 +10,10 @@
                                         <div class="card-header">
                                             <h3 class="card-title">DataTable with default features</h3>
                                         </div>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                        <a href="<?= base_url('admin/penjual/add/') ?>">tambah</a>
+                                        <button type="button" class="btn btn-primary" data-toogle="modal" data-target="modal-add"><i class="fa fa-plus">Tambah</i></button>
+                                        <div class="col-md-4">
+                                            <?php echo anchor(site_url('admin/penjual/add/'), ' Tambah Data', 'class="btn btn-primary fa fa-plus"'); ?>
+                                        </div>
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <table id="example1" class="table table-bordered table-striped">
@@ -63,10 +43,11 @@
                                                             <td><?= $u->address ?></td>
                                                             <td><?= $u->city ?></td>
                                                             <td>
-
-                                                                <a href="<?= base_url('penjual/R_penjual/edit/' . $u->id); ?>">edit</a>
-                                                                <a href="<?= base_url('penjual/R_penjual/delete/' . $u->id) ?>">delete</a>
-
+                                                                <?php
+                                                                echo anchor(site_url('admin/penjual/edit/' . $u->id), '<button type="button" class="btn btn-warning btn-xs">Update</button>');
+                                                                echo '&nbsp';
+                                                                echo anchor(site_url('penjual/R_penjual/delete/' . $u->id), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus Data?\')"');
+                                                                ?>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
@@ -88,13 +69,49 @@
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        <script>
-            var myModal = document.getElementById('myModal')
-            var myInput = document.getElementById('myInput')
+            </div>
+            <!-- /.content-wrapper -->
+            <script>
+                var myModal = document.getElementById('myModal')
+                var myInput = document.getElementById('myInput')
 
-            myModal.addEventListener('shown.bs.modal', function() {
-                myInput.focus()
-            })
-        </script>
+                myModal.addEventListener('shown.bs.modal', function() {
+                    myInput.focus()
+                })
+            </script>
+            <script>
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                            'Cancelled',
+                            'Your imaginary file is safe :)',
+                            'error'
+                        )
+                    }
+                })
+            </script>

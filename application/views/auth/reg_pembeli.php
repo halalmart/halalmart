@@ -1,7 +1,7 @@
 <div class="register-box">
     <div class="card card-outline card-success">
         <div class="card-header text-center">
-            <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            <a href="../../index2.html" class="h1"><b>Halalmart</b></a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Daftar Menjadi Penjual</p>

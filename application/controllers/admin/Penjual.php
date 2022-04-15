@@ -7,7 +7,8 @@ class Penjual extends CI_Controller
     {
         parent::__construct();
         $this->load->model('admin/M_penjual');
-        $this->load->helper('url');
+        //$this->load->library('template');
+        $this->load->helper('url', 'show_my_modal');
     }
     function index()
     {
@@ -16,17 +17,25 @@ class Penjual extends CI_Controller
         $this->load->view('admin/tempelate/header', $data);
         $this->load->view('admin/tempelate/navbar');
         $this->load->view('admin/tempelate/sidebar');
+        $this->load->view('admin/tempelate/wraper');
         $this->load->view('admin/data_penjual/v_penjual', $data);
         $this->load->view('admin/tempelate/footer');
     }
     function add()
     {
-
-        $this->load->view('penjual/registrasi/v_r_penjual_add');
+        $data['title'] = 'Tambah Penjual| HalalMart';
+        $data['title_table'] = 'Tambah Penjual';
+        $this->load->view('admin/tempelate/header', $data);
+        $this->load->view('admin/tempelate/navbar');
+        $this->load->view('admin/tempelate/sidebar');
+        $this->load->view('admin/tempelate/wraper');
+        $this->load->view('admin/data_penjual/v_penjual_add', $data);
+        $this->load->view('admin/tempelate/footer');
     }
 
     function add_action()
     {
+
         $id_penjual = $this->input->post('id_penjual');
         $nama = $this->input->post('nama');
         $username = $this->input->post('username');
@@ -34,7 +43,7 @@ class Penjual extends CI_Controller
         $jenis_kelamin = $this->input->post('jenis_kelamin');
         $kota = $this->input->post('kota');
         $alamat = $this->input->post('alamat');
-        $foto = $this->input->post('foto');
+
         $data = array(
             'id_penjual' => $id_penjual,
             'nama' => $nama,
@@ -42,8 +51,8 @@ class Penjual extends CI_Controller
             'password' => $password,
             'jenis_kelamin' => $jenis_kelamin,
             'kota' => $kota,
-            'alamat' => $alamat,
-            'foto' => $foto
+            'alamat' => $alamat
+
         );
         $this->M_penjual->add_data($data, 'penjual');
         redirect('penjual/r_penjual');
@@ -52,7 +61,7 @@ class Penjual extends CI_Controller
     {
         $where = array('id' => $id);
         $data['penjual'] = $this->M_penjual->edit_data($where, 'penjual')->result();
-        $this->load->view('penjual/registrasi/v_r_penjual_edit', $data);
+        $this->load->view('admin/data_penjual/v_penjual_edit', $data);
     }
     function edit_action()
     {

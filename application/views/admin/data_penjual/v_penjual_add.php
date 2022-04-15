@@ -1,45 +1,62 @@
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"></td>
-                </tr>
-                <tr>
-                    <td>Nama</td>
-                    <td><input type="text" name="name"></td>
-                </tr>
-                <tr>
-                    <td>Jenis Kelamin</td>
-                    <td><input type="text" name="jenis_kelamin"></td>
-                </tr>
-                <tr>
-                    <td>Kota</td>
-                    <td><input type="text" name="city"></td>
-                </tr>
-                <tr>
-                    <td>Alamat</td>
-                    <td><input type="text" name="address"></td>
-                </tr>
-                <tr>
-                    <td>Foto</td>
-                    <td><input type="text" name="foto"></td>
-                </tr>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+<section class="content pl-5">
+
+    <!-- Default box -->
+    <div class="card card-primary card-outline modal-fade" id="modal-add" role="dialog">
+        <div class="card-header model-dialog">
+            <div class="box-body ">
+                <form action="<<?= base_url('admin/penjual/add_action'); ?>" method="POST">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="email">email</label>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="text" class="form-control" name="password" id="password" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">nama lengkap</label>
+                            <input type="text" class="form-control" name="nama" id="nama" placeholder="nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_kelamin">jenis kelamin</label>
+                            <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" placeholder="jenis kelamin">
+
+                            <div class="form-group">
+                                <label for="city">Kota</label>
+                                <input type="text" class="form-control" name="city" id="city" placeholder="Kota">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Alamat</label>
+                                <textarea class="form-control" name="address" id="address" rows="3" placeholder="Alamat"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="" for="image">Foto</label>
+                                <div class="">
+                                    <?php echo form_upload(array('name' => 'image', 'id' => 'image', 'class' => 'form-control')); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="modal-footer">
+                            <button type="button" class="close" data-dismis="modal"></button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
+    <!-- /.box -->
+    </div>
+
+</section>
+<!-- /.content -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.tutup').click(function(e) {
+            $('#myModal').modal('hide');
+        });
+    });
+</script>
