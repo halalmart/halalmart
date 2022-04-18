@@ -21,6 +21,9 @@ class Dashboard extends CI_Controller
      */
     public function index()
     {
-        echo "<h1>Selamat Datang di Halalmart Penjual</h1>";
+        $data['title'] = 'Pembeli | Halalmart';
+        $this->load->view('tempelate/header', $data);
+        $this->load->view('pembeli/index');
+        $this->load->view('tempelate/footer');
     }
 }

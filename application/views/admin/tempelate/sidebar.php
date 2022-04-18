@@ -31,10 +31,23 @@
                 </div>
 
                 <!-- Sidebar Menu -->
+
+                <!-- QUERT JOIN-->
+
                 <nav class="mt-2">
+                    <?php
+                    /* menu manajemen
+                    $role_id = $this->session->userdata('role_id');
+                    $queryMenu = "SELECT * FROM admin_menu join user_role on admin_menu.id = user_role.id where user_role.id = $role_id";
+                    $menu = $this->db->query($queryMenu)->result_array();
+                    ?>
+                    <?php foreach ($menu as $m) : ?>
+                        <?= $m->menu ?>
+                    <?php endforeach; */ ?>
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
                         <li class="nav-item menu-open">
                             <a href="<?= base_url('admin/dashboard'); ?>" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -43,14 +56,11 @@
                                 </p>
                             </a>
                         </li>
-                        <!-- QUERT JOIN-->
-                        <?php $queryMenu = ""
-                        ?>
                         <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Data akun
+                                    Data Penjual
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -78,6 +88,7 @@
                             </a>
                         </li>
                     </ul>
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
