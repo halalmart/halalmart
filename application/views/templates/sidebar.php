@@ -70,8 +70,11 @@
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 </svg>
                                 <!-- Counter - Alerts -->
+                                                               <!-- Counter - Alerts -->
                                 
-                                <span class="badge badge-danger badge-counter">'items'</span>
+                                <span class="badge badge-danger badge-counter">
+                                    <?php echo $this->cart->total_items('items')?>
+                                </span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             
@@ -79,41 +82,23 @@
 
                        
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
 
+                        <div class="topbar-divider d-none d-sm-block"></div>
 
-
-
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
+                        <!-- Login -->
+                        <ul class="na navbar-nav navbar-right">
+                            <?php if($this->session->userdata('username')){?>
+                                <li>
+                                    <div>
+                                        Selamat datang <?php echo $this->session->userdata('username')?>
+                                    </div>
+                                </li>
+                            <li><?php echo anchor('auth/logout'),'Logout'?></li>
+                            <?php }else{?>
+                                <li><?php echo anchor('auth/login', 'Login');?></li>
+                       <?php }?>
             
+                        </ul>
                     </ul>
 
                 </nav>
