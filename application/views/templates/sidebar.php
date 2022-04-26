@@ -86,19 +86,18 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Login -->
-                        <ul class="na navbar-nav navbar-right">
                             <?php if($this->session->userdata('username')){?>
                                 <li>
                                     <div>
                                         Selamat datang <?php echo $this->session->userdata('username')?>
                                     </div>
                                 </li>
-                            <li><?php echo anchor('auth/logout'),'Logout'?></li>
+                            <li class="nav-item d-sm-inline-block"><?php echo anchor('auth/logout'),'Logout'?></li>
                             <?php }else{?>
-                                <li><?php echo anchor('auth/login', 'Login');?></li>
+                                <li class="nav-item form-inline mx-1"><?php echo anchor('auth/login', 'Login');?></li>
+
+                                <li class="nav-item form-inline mx-1"><?php echo anchor('auth/daftar', 'Daftar');?></li>
                        <?php }?>
-            
-                        </ul>
                     </ul>
 
                 </nav>
