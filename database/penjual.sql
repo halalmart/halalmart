@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2022 at 09:18 AM
+-- Generation Time: Apr 26, 2022 at 06:44 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -47,7 +47,8 @@ CREATE TABLE `penjual` (
 --
 
 INSERT INTO `penjual` (`id`, `id_penjual`, `email`, `password`, `name`, `jenis_kelamin`, `city`, `address`, `image`, `role_id`, `is_active`, `date_created`) VALUES
-(6, '87654321', 'kidi@diki.com', '$2y$10$2WjZKd96BvSV7/x7PpaZauWu778GJag7s/iI0vIt/zRohySoIrA1a', 'afan', 'laki-laki', 'Semarang', 'suruh', 'default.jpg', 2, 1, 1649919516);
+(6, '87654321', 'kidi@diki.com', '$2y$10$2WjZKd96BvSV7/x7PpaZauWu778GJag7s/iI0vIt/zRohySoIrA1a', 'afan', 'laki-laki', 'Semarang', 'suruh', 'default.jpg', 2, 1, 1649919516),
+(7, '87654321', 'ini@ini.com', '$2y$10$9ZnhL/9Lmfo.07KWh7wZPeyodFURykEdki8RDbVFKri4CfSb1M4mS', 'diki', 'laki-laki', 'Semarang', 'suruh', 'default.jpg', 2, 1, 1650266406);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +68,7 @@ ALTER TABLE `penjual`
 -- AUTO_INCREMENT for table `penjual`
 --
 ALTER TABLE `penjual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

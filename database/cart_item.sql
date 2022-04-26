@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2022 at 01:30 PM
+-- Generation Time: Apr 26, 2022 at 06:43 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,38 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Table structure for table `cart_item`
 --
 
-CREATE TABLE `produk` (
-  `id` int(6) NOT NULL,
-  `id_kategori` int(6) NOT NULL,
-  `id_produk` int(6) NOT NULL,
-  `foto` varchar(255) NOT NULL,
-  `nama_produk` varchar(255) NOT NULL,
-  `harga` varchar(255) NOT NULL,
-  `khasiat` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `produk`
---
-ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `produk`
---
-ALTER TABLE `produk`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
+CREATE TABLE `cart_item` (
+  `id` int(11) NOT NULL,
+  `session` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modified_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

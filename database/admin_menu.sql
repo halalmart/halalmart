@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2022 at 09:17 AM
+-- Generation Time: Apr 26, 2022 at 06:43 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -29,8 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin_menu` (
   `id` int(11) NOT NULL,
-  `id_menu` int(11) NOT NULL,
-  `title` varchar(128) NOT NULL,
+  `menu` varchar(128) NOT NULL,
   `url` varchar(128) NOT NULL,
   `icon` varchar(128) NOT NULL,
   `role_id` varchar(10) NOT NULL,
@@ -41,8 +40,8 @@ CREATE TABLE `admin_menu` (
 -- Dumping data for table `admin_menu`
 --
 
-INSERT INTO `admin_menu` (`id`, `id_menu`, `title`, `url`, `icon`, `role_id`, `is_active`) VALUES
-(1, 1, 'Data Penjual', 'admin/penjual', 'fas fa-fw fa-user', '', 1);
+INSERT INTO `admin_menu` (`id`, `menu`, `url`, `icon`, `role_id`, `is_active`) VALUES
+(1, 'Data Penjual', 'admin/penjual', 'fas fa-fw fa-user', '1+2', 1);
 
 --
 -- Indexes for dumped tables

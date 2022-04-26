@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2022 at 01:29 PM
+-- Generation Time: Apr 26, 2022 at 06:44 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,16 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Table structure for table `paymem_details`
 --
 
-CREATE TABLE `products` (
-  `product_id` varchar(64) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL DEFAULT 'default.jpg',
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `paymem_details` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `provider` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modified_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
