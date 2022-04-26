@@ -86,7 +86,7 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Login -->
-                            <?php if($this->session->userdata('username')){?>
+                              <?php if($this->session->userdata('username')){?>
                                 <li>
                                     <div>
                                         Selamat datang <?php echo $this->session->userdata('username')?>
@@ -94,9 +94,9 @@
                                 </li>
                             <li class="nav-item d-sm-inline-block"><?php echo anchor('auth/logout'),'Logout'?></li>
                             <?php }else{?>
-                                <li class="nav-item form-inline mx-1"><?php echo anchor('auth/login', 'Login');?></li>
+                                <li class="nav-item form-inline mx-1"><div class="btn btn-primary"><?php echo anchor('auth/login', 'Login');?></div></li>
 
-                                <li class="nav-item form-inline mx-1"><?php echo anchor('auth/daftar', 'Daftar');?></li>
+                                <li class="nav-item form-inline mx-1"><div class="btn btn-outline-primary"><?php echo anchor('auth/daftar', 'Daftar');?></div></li>
                        <?php }?>
                     </ul>
 
