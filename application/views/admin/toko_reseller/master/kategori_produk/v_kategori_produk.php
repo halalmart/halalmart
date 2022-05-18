@@ -31,7 +31,7 @@
                                                     ?>
                                                         <tr>
                                                             <td><?= $no++ ?></td>
-                                                            <td><?= $u->icon ?></td>
+                                                            <td><?= "<img src='upload/$u->foto' width='70' height='90' />"; ?></td>
                                                             <td><?= $u->nama_kategori ?></td>
                                                             <td>
                                                                 <?php

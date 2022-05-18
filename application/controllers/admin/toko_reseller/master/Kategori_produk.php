@@ -41,7 +41,7 @@ class Kategori_produk extends CI_Controller
         $foto = $_FILES['foto'];
         if ($foto = '') {
         } else {
-            $config['upload_path'] = './upload';
+            $config['upload_path'] = FCPATH . '/upload';
             $config['allowed_types'] = 'jpg|png|jpeg';
 
             $this->load->library('upload', $config);
