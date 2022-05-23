@@ -9,7 +9,7 @@ class Data_produk extends CI_Controller
         $this->load->model('admin/toko_reseller/master/M_data_produk');
         $this->load->model('admin/toko_reseller/master/M_kategori_produk');
         $this->load->library('form_validation');
-        $this->load->helper('url', 'show_my_modal');
+        $this->load->helper('form', 'url', 'show_my_modal');
     }
     function index()
     {
@@ -101,7 +101,7 @@ class Data_produk extends CI_Controller
         $price = $this->input->post('price');
         $patner_price = $this->input->post('patner_price');
         $point = $this->input->post('point');
-        $foto = $_FILES['foto'];
+        $foto = $_FILES['foto' . $id_product];
         if ($foto = '') {
         } else {
             $config['upload_path'] = FCPATH . '//upload/product/';
@@ -109,8 +109,8 @@ class Data_produk extends CI_Controller
 
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('foto')) {
-                echo "sabar";
-                die();
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('admin/toko_reseller/master/data_produk/v_data_produk_edit', $error);
             } else {
                 $foto = $this->upload->data('file_name');
             }

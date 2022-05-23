@@ -10,8 +10,13 @@
             <div class="card-body">
                 <?php echo form_hidden('category_id', $u->category_id); ?>
                 <div class="form-group">
-                    <label for="nama_kategori">Nama Kategori</label>
-                    <input type="text" value="<?= $u->nama_kategori ?>" class="form-control" id="nama_kategori" name="nama_kategori" placeholder="Nama Kategori" autocomplete="off">
+                    <label for="foto">Foto</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="foto" value="<?= $u->foto ?>">
+                            <label class="custom-file-label" for="foto"></label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>foto</label>

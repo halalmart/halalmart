@@ -12,8 +12,13 @@
                 <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" placeholder="Nama Kategori" autocomplete="off">
             </div>
             <div class="form-group">
-                <label>foto</label>
-                <input type="file" class="form-control" id="foto" name="foto" placeholder="upload foto">
+                <label for="foto">Foto</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="foto">
+                        <label class="custom-file-label" for="foto"></label>
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -9,12 +9,14 @@
         <div class="card-body">
             <?php foreach ($data_produk as $u) : ?>
                 <?php echo form_hidden('id_product', $u->id_product); ?>
-                <div class="form-upload">
-                    <label>foto</label>
-                    <p>
-                        <img src="<?php echo base_url('upload/product/') . $u->foto; ?>" width="150" height="150" class="file-preview-image">
-                    </p>
-                    <input type="file" class="form-control" value="<?= $u->foto ?>" id="foto" name="foto" placeholder="upload foto">
+                <div class="form-group">
+                    <label for="foto">Foto</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="foto" value="<?= $u->foto ?>">
+                            <label class="custom-file-label" for="foto"></label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="name">Nama</label>
@@ -30,30 +32,31 @@
                 </div>
                 <div class="form-group">
                     <label for="category_id">Kategori</label>
-                    <select class="form-control" name="category_id">
-                        <option value="<?= $u->category_id ?>"><?= $u->category_id ?></option>
+                    <select class="custom-select" name="category_id">
+                        <option value="<?= $u->category_id ?>">-- <?= $u->category_id ?> --</option>
                         <?php foreach ($kategori as $d) { ?>
-                            <option value="<?= $d->category_id ?>"><?= $d->nama_kategori ?> </option>
+                            <option value="<?= $d->category_id ?>"> <?= $d->nama_kategori ?> </option>
                         <?php } ?>
                     </select>
-                    <div class="form-group">
-                        <label for="inventory_id">Inventory</label>
-                        <input type="text" class="form-control" value="<?= $u->inventory_id ?>" id="inventory_id" name="inventory_id" placeholder="Poin" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Harga</label>
-                        <input type="text" class="form-control" value="<?= $u->price ?>" id="price" name="price" placeholder="harga" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <label for="patner_price">Harga Mitra</label>
-                        <input type="text" class="form-control" value="<?= $u->patner_price ?>" id="patner_price" name="patner_price" placeholder="Harga Mitra" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <label for="point">Poin</label>
-                        <input type="text" class="form-control" value="<?= $u->point ?>" id="point" name="point" placeholder="Poin" autocomplete="off">
-                    </div>
-                <?php endforeach; ?>
                 </div>
+                <div class="form-group">
+                    <label for="inventory_id">Inventory</label>
+                    <input type="text" class="form-control" value="<?= $u->inventory_id ?>" id="inventory_id" name="inventory_id" placeholder="Poin" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="price">Harga</label>
+                    <input type="text" class="form-control" value="<?= $u->price ?>" id="price" name="price" placeholder="harga" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="patner_price">Harga Mitra</label>
+                    <input type="text" class="form-control" value="<?= $u->patner_price ?>" id="patner_price" name="patner_price" placeholder="Harga Mitra" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="point">Poin</label>
+                    <input type="text" class="form-control" value="<?= $u->point ?>" id="point" name="point" placeholder="Poin" autocomplete="off">
+                </div>
+            <?php endforeach; ?>
+
         </div>
         <!-- /.card-body -->
 

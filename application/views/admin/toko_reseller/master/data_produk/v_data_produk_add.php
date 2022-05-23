@@ -7,9 +7,14 @@
     <?php echo form_open_multipart('admin/toko_reseller/master/data_produk/add_action/'); ?>
     <form method="post">
         <div class="card-body">
-            <div class="form-upload">
-                <label>foto</label>
-                <input type="file" class="form-control" id="foto" name="foto" placeholder="upload foto">
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="foto">
+                        <label class="custom-file-label" for="foto">Upload</label>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="name">Nama</label>
