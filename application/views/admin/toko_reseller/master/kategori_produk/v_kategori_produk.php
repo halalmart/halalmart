@@ -8,7 +8,7 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3 class="card-title">DataTable with default features</h3>
+                                            <h3 class="card-title"></h3>
                                         </div>
                                         <div class="col-md-4">
                                             <?php echo anchor(site_url('admin/toko_reseller/master/kategori_produk/add/'), ' Tambah Data', 'class="btn btn-primary"', 'class="fa fa-plus"'); ?>
@@ -31,13 +31,13 @@
                                                     ?>
                                                         <tr>
                                                             <td><?= $no++ ?></td>
-                                                            <td><?= "<img src='upload/$u->foto' width='70' height='90' />"; ?></td>
+                                                            <td><img src="<?php echo base_url('upload/icon/kategori/') . $u->foto; ?>" width="40" height="40" class="file-preview-image"></td>
                                                             <td><?= $u->nama_kategori ?></td>
                                                             <td>
                                                                 <?php
-                                                                echo anchor(site_url('admin/toko_reseller/master/kategori_produk/edit/' . $u->id), '<button type="button" class="btn btn-warning btn-xs">Update</button>');
+                                                                echo anchor(site_url('admin/toko_reseller/master/kategori_produk/edit/' . $u->category_id), '<button type="button" class="btn btn-warning btn-xs">Update</button>');
                                                                 echo '&nbsp';
-                                                                echo anchor(site_url('admin/toko_reseller/master/kategori_produk/delete/' . $u->id), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus Data?\')"');
+                                                                echo anchor(site_url('admin/toko_reseller/master/kategori_produk/delete/' . $u->category_id), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus Data?\')"');
                                                                 ?>
                                                             </td>
                                                         </tr>

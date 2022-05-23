@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2022 at 06:44 AM
+-- Generation Time: May 23, 2022 at 05:26 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,44 +24,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori produk`
+-- Table structure for table `kategori_produk`
 --
 
-CREATE TABLE `kategori produk` (
-  `id` int(2) NOT NULL,
-  `icon` varchar(255) NOT NULL,
+CREATE TABLE `kategori_produk` (
+  `category_id` int(2) NOT NULL,
+  `foto` varchar(255) NOT NULL,
   `nama_kategori` varchar(255) NOT NULL,
   `date_input` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori produk`
+-- Dumping data for table `kategori_produk`
 --
 
-INSERT INTO `kategori produk` (`id`, `icon`, `nama_kategori`, `date_input`) VALUES
-(1, '', 'herbs products', '2022-04-12 05:34:23'),
-(2, '', 'health food & beverages', '2022-04-12 05:35:12'),
-(3, '', 'cosmetics & home care', '2022-04-12 05:36:06');
+INSERT INTO `kategori_produk` (`category_id`, `foto`, `nama_kategori`, `date_input`) VALUES
+(1, 'com_yanuarhpai_resepherbahpai-removebg-preview.png', 'herbs products', '2022-04-12 05:34:23'),
+(2, '12208748-removebg-preview1.png', 'health food & beverages', '2022-04-12 05:35:12'),
+(3, 'pngwing_com.png', 'cosmetics & home care', '2022-04-12 05:36:06');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kategori produk`
+-- Indexes for table `kategori_produk`
 --
-ALTER TABLE `kategori produk`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `kategori_produk`
+  ADD PRIMARY KEY (`category_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `kategori produk`
+-- AUTO_INCREMENT for table `kategori_produk`
 --
-ALTER TABLE `kategori produk`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `kategori_produk`
+  MODIFY `category_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -40,7 +40,7 @@ class Auth extends CI_Controller
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 2) {
+                    if ($user['role_id'] == 4) {
                         redirect('pembeli/Dashboard');
                     } else {
                     }
@@ -77,7 +77,7 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Registrasi Pembeli';
             $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/reg_pembeli');
+            $this->load->view('registrasi/reg_pembeli');
             $this->load->view('templates/auth_footer');
         } else {
             $data = [

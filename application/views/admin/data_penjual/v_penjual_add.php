@@ -1,22 +1,24 @@
 <section class="content pl-5">
 
     <!-- Default box -->
-    <div class="card card-primary card-outline modal-fade" id="modal-add" role="dialog">
+    <div class="card card-primary card-outline modal-fade">
         <div class="card-header model-dialog">
             <div class="box-body ">
-                <form action="<<?= base_url('admin/penjual/add_action'); ?>" method="POST">
+
+                <form action="" method="POST">
                     <div class="box-body">
                         <div class="form-group">
                             <label for="email">email</label>
                             <input type="text" class="form-control" name="email" id="email" placeholder="email">
+                            <?php echo base_url('admin/penjual/add_action'); ?>
                         </div>
                         <div class="form-group">
                             <label for="password">password</label>
                             <input type="text" class="form-control" name="password" id="password" placeholder="password">
                         </div>
                         <div class="form-group">
-                            <label for="nama">nama lengkap</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="nama lengkap">
+                            <label for="name">nama lengkap</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="nama lengkap">
                         </div>
                         <div class="form-group">
                             <label for="jenis_kelamin">jenis kelamin</label>
@@ -41,8 +43,8 @@
                         <!-- /.box-body -->
 
                         <div class="modal-footer">
-                            <button type="button" class="close" data-dismis="modal"></button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+
+                            <button type="button" class="btn btn-primary">Save</button>
                         </div>
                 </form>
             </div>

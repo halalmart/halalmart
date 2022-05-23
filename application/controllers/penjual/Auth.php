@@ -66,6 +66,9 @@ class Auth extends CI_Controller
 
     public function reg_penjual()
     {
+        $this->form_validation->set_rules('id_penjual', 'Id_penjual', 'required|trim|is_unique[penjual.id_penjual]', [
+            'is_unique' => 'ID sudah terdaftar!'
+        ]);
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[penjual.email]', [
             'is_unique' => 'Email sudah terdaftar!'
@@ -78,7 +81,7 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Registrasi Pembeli';
             $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/reg_penjual');
+            $this->load->view('registrasi/reg_penjual');
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
@@ -96,7 +99,7 @@ class Auth extends CI_Controller
             ];
             $this->db->insert('penjual', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akun anda berhasil dibuat. Silahkan login.</div>');
-            redirect('auth');
+            redirect('penjual/auth');
         }
     }
     public function logout()
@@ -106,6 +109,6 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Anda telah keluar!
         </div>');
-        redirect('admin/auth');
+        redirect('penjual/auth');
     }
 }

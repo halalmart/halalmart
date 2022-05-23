@@ -1,14 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Homepage extends CI_Controller
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->load->model('M_penjual');
-        $this->load->helper('url');
-    }
+
     /**
      * Index Page for this controller.
      *
@@ -26,12 +21,9 @@ class Dashboard extends CI_Controller
      */
     public function index()
     {
-        $data['title'] = 'Penjual | HalalMart';
-        // $menu['menu'] =  $this->M_penjual->get_menu();
-        $this->load->view('tempelate/header', $data);
-        $this->load->view('tempelate/navbar');
-        $this->load->view('penjual/tempelate/sidebar');
-        $this->load->view('penjual/index');
-        $this->load->view('tempelate/footer');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('homepage/homepage');
+        $this->load->view('templates/footer');
     }
 }

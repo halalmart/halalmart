@@ -5,7 +5,7 @@
                 <img src="<?= base_url('assets/') ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Halalmart</span>
             </a>
-
+            <!--sidebar sementara manual. belum tahu cata terintegerasi ke database-->
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -47,7 +47,6 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
                         <li class="nav-item menu-open">
                             <a href="<?= base_url('admin/dashboard'); ?>" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -56,28 +55,75 @@
                                 </p>
                             </a>
                         </li>
+                        <!--cek srs. ini versi minimal-->
                         <li class="nav-item">
                             <a href="" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="nav-icon fas fa-database"></i>
                                 <p>
-                                    Data Penjual
+                                    Toko Reseller
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?= base_url('admin/penjual/'); ?>" class="nav-link">
+                                    <a href="" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Penjual</p>
+                                        <p>
+                                            Master
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= base_url('admin/pembeli/'); ?>" class="nav-link">
-                                        <i class=" far fa-circle nav-icon"></i>
-                                        <p>Data Pembeli</p>
-                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="<?= base_url('admin/toko_reseller/master/kategori_produk'); ?>" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Kategori Produk</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="<?= base_url('admin/toko_reseller/master/data_produk'); ?>" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Data Produk</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Transaksi
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <!--sementara menggunakan penjual dan pembeli-->
+                                        <li class="nav-item">
+                                            <a href="<?= base_url('admin/transaksi/pennjualan'); ?>" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Penjualan</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="<?= base_url('admin/transaksi/pembelian'); ?>" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Pembelian</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Edit Profil
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= base_url('admin/auth/logout'); ?>" class="nav-link">

@@ -7,7 +7,7 @@
         <div class="card-body">
             <?= $this->session->flashdata('message'); ?>
 
-            <form action="<?= base_url('penjual/auth'); ?>" method="post">
+            <form action="<?= base_url('pembeli/auth'); ?>" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Email" id="email" name="email">
                     <div class="input-group-append">
