@@ -105,6 +105,7 @@ class Kategori_produk extends CI_Controller
     {
         $where = array('category_id' => $category_id);
         $this->M_kategori_produk->delete_data($where, 'kategori_produk');
+        unlink(FCPATH . '//upload/icon/kategori/' . $category_id);
         redirect('admin/toko_reseller/master/kategori_produk');
     }
 }

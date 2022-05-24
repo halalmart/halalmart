@@ -5,6 +5,7 @@ class M_data_produk extends CI_Model
     function get_data()
     {
         return $this->db->get('product');
+        return $this->db->get('kategori_produk');
     }
     function add_data($data, $table)
     {

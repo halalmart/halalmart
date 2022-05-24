@@ -11,8 +11,8 @@
                 <label for="foto">Foto</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="foto">
-                        <label class="custom-file-label" for="foto">Upload</label>
+                        <input type="file" class="custom-file-input" id="foto" name="foto">
+                        <label class="custom-file-label" for="foto"></label>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label for="inventory_id">Inventory</label>
-                <input type="text" class="form-control" id="inventory_id" name="inventory_id" placeholder="Poin" autocomplete="off">
+                <input type="text" class="form-control" id="inventory_id" name="inventory_id" placeholder="Infentory" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="price">Harga</label>
@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
                 <label for="point">Poin</label>
-                <input type="text" class="form-control" id="point" name="point" placeholder="Poin" autocomplete="off">
+                <input type="text" class="form-control" id="point" name="point" placeholder="point" autocomplete="off">
             </div>
         </div>
         <!-- /.card-body -->

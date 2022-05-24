@@ -15,7 +15,7 @@
                 <label for="foto">Foto</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="foto">
+                        <input type="file" class="custom-file-input" id="foto" name="foto">
                         <label class="custom-file-label" for="foto"></label>
                     </div>
                 </div>

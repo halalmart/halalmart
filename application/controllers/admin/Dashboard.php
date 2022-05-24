@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = 'Admin | HalalMart';
-        $data['menu'] =  $this->M_menu->get_menu();
+        $data['menu'] =  $this->M_menu->get_data()->result();
         $this->load->view('admin/tempelate/header', $data);
         $this->load->view('admin/tempelate/navbar');
         $this->load->view('admin/tempelate/sidebar', $data);

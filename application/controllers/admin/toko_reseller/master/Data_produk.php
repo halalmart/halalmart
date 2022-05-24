@@ -101,7 +101,7 @@ class Data_produk extends CI_Controller
         $price = $this->input->post('price');
         $patner_price = $this->input->post('patner_price');
         $point = $this->input->post('point');
-        $foto = $_FILES['foto' . $id_product];
+        $foto = $_FILES['foto'];
         if ($foto = '') {
         } else {
             $config['upload_path'] = FCPATH . '//upload/product/';
