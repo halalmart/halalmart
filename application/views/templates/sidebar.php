@@ -17,6 +17,14 @@
                     </button>
                     <img src="<?php echo base_url()?>assets/img/HNI.png" width="56" height="42" href="#" role="button">
                     <h1 class="h3 mb-0 text-gray-800" href="#" role="button">Halal Mart</h1>
+                     <div class="dropdown">
+                        <h6 class="mb-0 text-gray-800 dropbtn" role="button">Kategori</h6>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                  </div>
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
