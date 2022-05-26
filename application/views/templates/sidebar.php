@@ -12,7 +12,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3 dropdown">
                         <i class="fa fa-bars"></i>
                     </button>
                     <img src="<?php echo base_url()?>assets/img/HNI.png" width="56" height="42" href="#" role="button">
