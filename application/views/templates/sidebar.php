@@ -97,9 +97,9 @@
                                 </li>
                             <li class="nav-item d-sm-inline-block"><?php echo anchor('auth/logout'),'Logout'?></li>
                             <?php }else{?>
-                                <li class="nav-item form-inline mx-1"><div class="text-decoration-none btn btn-primary"><?php echo anchor('auth/login', 'Login');?></div></li>
+                                <li class="nav-item form-inline mx-1"><div class="text-decoration-none btn btn-primary"><?php echo anchor('admin/Auth', 'Login');?></div></li>
 
-                                <li class="nav-item form-inline mx-1"><div class="text-decoration-none btn btn-outline-primary"><?php echo anchor('auth/daftar', 'Daftar');?></div></li>
+                                <li class="nav-item form-inline mx-1"><div class="text-decoration-none btn btn-outline-primary"><?php echo anchor('admin/daftar', 'Daftar');?></div></li>
                        <?php }?>
                    
                     </ul>
