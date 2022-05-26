@@ -26,19 +26,4 @@ class Homepage extends CI_Controller
 		$this->load->view('homepage');
 		$this->load->view('templates/footer');
 	}
-		public function tambah_ke_keranjang()
-	{
-
-		 $data = array(
-        'id'      => 'sku_123ABC',
-        'qty'     => 1,
-        'price'   => 39.95,
-        'name'    => 'T-Shirt',
-        'options' => array('Size' => 'L', 'Color' => 'Red')
-		);
-
-			$this->cart->insert($data);
-			redirect('#');
-	}	
-
 }
