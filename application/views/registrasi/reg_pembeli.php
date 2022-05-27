@@ -4,7 +4,7 @@
             <a href="../../index2.html" class="h1"><b>Halalmart</b></a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Daftar Menjadi Penjual</p>
+            <p class="login-box-msg">Daftar Menjadi Pmbeli</p>
 
             <form action="<?= base_url('pembeli/auth/reg_pembeli'); ?>" method="post">
 
@@ -18,14 +18,17 @@
                 </div>
                 <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="jenis kelamin" id="jenis_kelamin" name="jenis_kelamin" value="<?= set_value('jenis_kelamin'); ?>">
+                    <select class="form-control" name="jenis_kelamin">
+                        <option value="">Jenis Kelamin</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
                         </div>
                     </div>
                 </div>
-                <?= form_error('jenis_kelamin', '<small class="text-danger pl-3">', '</small>'); ?>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="city" id="city" name="city" value="<?= set_value('city'); ?>">
                     <div class="input-group-append">
@@ -71,22 +74,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                            <label for="agreeTerms">
-                                I agree to the <a href="#">terms</a>
-                            </label>
-                        </div>
-                    </div>
                     <!-- /.col -->
-                    <div class="col-4">
+                    <div class="col-6">
+                        <a href="<?= base_url(); ?>auth" class="text-center">Saya Punya Akun</a>
+                    </div>
+                    <div class="col-6">
                         <button type="submit" class="btn btn-success btn-block">Daftar</button>
                     </div>
                     <!-- /.col -->
                 </div>
+                <div class="row">
+
+                </div>
             </form>
-            <a href="<?= base_url(); ?>auth" class="text-center">Saya Punya Akun</a>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->
