@@ -32,4 +32,9 @@ class M_data_produk extends CI_Model
 
         return $this->db->get();
     }
+    function get_data_by_id($id_product)
+    {
+        $this->db->where('id_product', $id_product);
+        return $this->db->get('product');
+    }
 }

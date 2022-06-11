@@ -65,43 +65,60 @@
 
 
                     <!-- keranjang -->
-                    <li class="nav-item dropdown no-arrow mx-1">
+                    <?php foreach ($user as $u) { ?>
+                        <li class="nav-item dropdown no-arrow mx-1">
 
-                        <a class="nav-link dropdown-toggle" href="<?= base_url('pembeli/buy/cart/show_cart') ?>" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                            </svg>
-                            <!-- Counter - Alerts -->
-
-
-                            <span class="badge badge-danger badge-counter">
-                                <?php echo $this->M_cart->total_items('quantitiy') ?>
-
-                            </span>
-                        </a>
-                    </li>
+                            <a class="nav-link dropdown-toggle" href="<?= base_url('pembeli/pembelian/show_cart/' . $u->id_pembeli) ?>" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg>
+                                <!-- Counter - Alerts -->
 
 
+                                <span class="badge badge-danger badge-counter">
+                                    <?php echo $this->M_cart->total_items($u->id_pembeli) ?>
 
+                                </span>
+                            </a>
 
-                    <div class="topbar-divider d-none d-sm-block"></div>
-
-                    <!-- Login -->
-                    <?php if ($this->session->userdata('username')) { ?>
-                        <li>
-                            <div>
-                                Selamat datang <?php echo $this->session->userdata('username') ?>
-                            </div>
                         </li>
-                        <li class="nav-item d-sm-inline-block"><?php echo anchor('auth/logout'), 'Logout' ?></li>
-                    <?php } else { ?>
-                        <li class="nav-item form-inline mx-1">
-                            <div class="text-decoration-none btn btn-primary"><?php echo anchor('pembeli/Auth', 'Login'); ?></div>
+                        <li class="nav-item dropdown no-arrow mx-1">
+
+                            <a class="nav-link " href="<?= base_url('pembeli/pembelian/show_cart/' . $u->id_pembeli) ?>" aria-haspopup="true" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg>
+                                <!-- Counter - Alerts -->
+
+
+                                <span class="badge badge-danger badge-counter">
+                                    <?php echo $this->M_cart->total_items($u->id_pembeli) ?>
+
+                                </span>
+                            </a>
+
                         </li>
 
-                        <li class="nav-item form-inline mx-1">
-                            <div class="text-decoration-none btn btn-outline-primary"><?php echo anchor('pembeli/auth/reg_pembeli', 'Daftar'); ?></div>
-                        </li>
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Login -->
+                        <?php if ($this->session->userdata('username')) { ?>
+                            <li>
+                                <div>
+                                    Selamat datang <?php echo $this->session->userdata('username') ?>
+                                </div>
+                            </li>
+                            <li class="nav-item d-sm-inline-block"><?php echo anchor('auth/logout'), 'Logout' ?></li>
+                        <?php } else { ?>
+                            <li class="nav-item form-inline mx-1">
+                                <?= $u->name ?>
+                                <div class="text-decoration-none btn btn-outline-danger"><?php echo anchor('pembeli/auth/logout', 'Keluar'); ?></div>
+                            </li>
+                        <?php } ?>
+
                     <?php } ?>
 
                 </ul>

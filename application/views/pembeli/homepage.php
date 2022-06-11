@@ -53,12 +53,11 @@
        <div class="card" style="width: 18rem;">
          <img src="<?php echo base_url('upload/product/') . $u->foto; ?>" height="250" class=" card-img-top" alt="...">
          <div class="card-body">
-           <h5 class="card-title" value="<?= $u->name ?>"><?= $u->name ?></h5>
+           <h5 class="card-title" value="<?= $u->name ?>" name><?= $u->name ?></h5>
            <p class="card-text"><?= $u->desc ?></p>
            <s class="card-text" style="color:red;"><?= "Rp. " . number_format($u->price, 0, ',', '.') ?></s>
            <h4 class="card-text"><?= "Rp. " . number_format($u->patner_price, 0, ',', '.') ?></h4>
-           <a href="<?= site_url('pembeli/cart/product/' . $u->id_product) ?>" class="btn btn-success">+kernjang</a>
-           <a href="<?= site_url('pembeli/cart/product/3') ?>" class="btn btn-primary">Go somewhere</a>
+           <a href="<?= site_url('pembeli/pembelian/product/' . $u->id_product) ?>" class="btn btn-success">+kernjang</a>
 
          </div>
        </div>

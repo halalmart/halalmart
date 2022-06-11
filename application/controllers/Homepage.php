@@ -19,26 +19,31 @@ class Homepage extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('admin/toko_reseller/master/M_kategori_produk');
+		$this->load->model('admin/toko_reseller/master/M_data_produk');
+		$this->load->model('pembeli/M_cart');
+		$this->load->library('form_validation');
+		$this->load->helper('form', 'url', 'show_my_modal');
+	}
 	public function index()
 	{
+		$data['kategori'] = $this->M_kategori_produk->get_data()->result();
+		$data['produk'] = $this->M_data_produk->get_data()->result();
+		$data['cart'] = $this->M_cart->get_data()->result();
 		$this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('homepage');
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('homepage', $data);
 		$this->load->view('templates/footer');
 	}
-		public function tambah_ke_keranjang()
+	public function tambah_ke_keranjang()
 	{
-
-		 $data = array(
-        'id'      => 'sku_123ABC',
-        'qty'     => 1,
-        'price'   => 39.95,
-        'name'    => 'T-Shirt',
-        'options' => array('Size' => 'L', 'Color' => 'Red')
-		);
-
-			$this->cart->insert($data);
-			redirect('#');
-	}	
-
+		$id_produk = $this->input->post('id_produk');
+		$jumlah = $this->input->post('jumlah');
+		$this->session->set_userdata('id_produk', $id_produk);
+		$this->session->set_userdata('jumlah', $jumlah);
+		redirect('admin/toko_reseller/master/data_produk/detail/' . $id_produk);
+	}
 }

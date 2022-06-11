@@ -4,7 +4,7 @@ class M_menu extends CI_Model
 {
     function get_data()
     {
-        return $this->db->get('admin_menu');
+        return $this->db->get('kategori_produk');
     }
     function get_menu()
     {

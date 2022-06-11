@@ -67,7 +67,6 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('message', 'onclick="javasciprt: return confirm(\'Yakin Ingin Keluar?\')"');
         redirect('admin/auth');
     }
 }

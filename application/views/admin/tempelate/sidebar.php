@@ -82,6 +82,12 @@
                                                 <p>Data Produk</p>
                                             </a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a href="<?= base_url('admin/toko_reseller/master/kurir'); ?>" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>kurir</p>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -97,7 +103,7 @@
                                     <ul class="nav nav-treeview">
                                         <!--sementara menggunakan penjual dan pembeli-->
                                         <li class="nav-item">
-                                            <a href="<?= base_url('admin/transaksi/pennjualan'); ?>" class="nav-link">
+                                            <a href="<?= base_url('admin/toko_reseller/transaksi/penjualan'); ?>" class="nav-link">
                                                 <i class="far fa-dot-circle nav-icon"></i>
                                                 <p>Penjualan</p>
                                             </a>

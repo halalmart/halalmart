@@ -40,8 +40,8 @@ class Auth extends CI_Controller
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 4) {
-                        redirect('pembeli/Dashboard');
+                    if ($user['role_id'] == 3) {
+                        redirect('pembeli/Homepage');
                     } else {
                     }
                 } else {
@@ -104,6 +104,6 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Anda telah keluar!
         </div>');
-        redirect('pembeli/auth');
+        redirect('homepage');
     }
 }

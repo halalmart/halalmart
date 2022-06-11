@@ -1,10 +1,16 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
-class M_r_pembeli extends CI_Model
+class M_penjualan extends CI_Model
 {
     function get_data()
     {
-        return $this->db->get('pembeli');
+        return $this->db->get('penjualan');
+    }
+    function get_pembeli()
+    {
+        $this->db->select('pembelian.*, pembeli.name AS nama_pembeli, pembeli.role_id AS status_pembeli');
+        $this->db->join('pembeli', 'product.category_id = pembeli.category_id');
+        return $this->db->get();
     }
     function add_data($data, $table)
     {
@@ -23,10 +29,5 @@ class M_r_pembeli extends CI_Model
     {
         $this->db->where($where);
         $this->db->delete($table);
-    }
-    function get_data_by_id($id_pembeli)
-    {
-        $this->db->where('id_pembeli', $id_pembeli);
-        return $this->db->get('pembeli');
     }
 }
