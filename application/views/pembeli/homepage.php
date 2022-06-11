@@ -22,31 +22,23 @@
      </a>
    </div>
 
-   <div class="row">
-
-     <div class="card" style="width: 18rem;">
-       <img src="..." class="card-img-top" alt="...">
-       <div class="card-body">
-         <h5 class="card-title">Card title</h5>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-         <a href="#" class="btn btn-primary">Go somewhere</a>
-       </div>
-     </div>
-
+   <div class="row ">
+     <h2 class="">KATEGORI PRODUK</h2>
    </div>
 
-   <div class="row">
+   <div class="row ">
      <?php foreach ($kategori as $k) : ?>
-       <div class="card" style="width: 18rem;">
+       <div class="card text-center" style=" width: 18rem; ">
          <img src="<?php echo base_url('upload/icon/kategori/') . $k->foto; ?>" class="card-img-top" alt="...">
          <div class="card-body">
            <h5 class="card-title"><?= $k->nama_kategori ?></h5>
-           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-           <a href="#" class="btn btn-primary">Klik Disini</a>
+           <a href="#" class="btn btn-primary te">Klik Disini</a>
          </div>
        </div>
      <?php endforeach; ?>
-
+   </div>
+   <div class="row ">
+     <h2 class="">PRODUK HALALMART</h2>
    </div>
    <div class="row">
      <?php foreach ($produk as $u) : ?>
@@ -57,7 +49,7 @@
            <p class="card-text"><?= $u->desc ?></p>
            <s class="card-text" style="color:red;"><?= "Rp. " . number_format($u->price, 0, ',', '.') ?></s>
            <h4 class="card-text"><?= "Rp. " . number_format($u->patner_price, 0, ',', '.') ?></h4>
-           <a href="<?= site_url('pembeli/pembelian/product/' . $u->id_product) ?>" class="btn btn-success">+kernjang</a>
+           <a href="<?= site_url('pembeli/pembelian/product/' . $u->id_product) ?>" class="btn btn-success fa fa-plus align-self-center"> Tambah</a>
 
          </div>
        </div>

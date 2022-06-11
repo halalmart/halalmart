@@ -114,8 +114,9 @@
                             <li class="nav-item d-sm-inline-block"><?php echo anchor('auth/logout'), 'Logout' ?></li>
                         <?php } else { ?>
                             <li class="nav-item form-inline mx-1">
-                                <?= $u->name ?>
-                                <div class="text-decoration-none btn btn-outline-danger"><?php echo anchor('pembeli/auth/logout', 'Keluar'); ?></div>
+                                <img src="<?php echo base_url('upload/pembeli/profil/') . $u->image ?>" width="40" height="40" class="img-circle">
+                                <? echo '&nbsp'; ?>
+                                <div class="text-decoration-none btn btn-danger "><?php echo anchor('pembeli/auth/logout', 'Keluar'); ?></div>
                             </li>
                         <?php } ?>
 
