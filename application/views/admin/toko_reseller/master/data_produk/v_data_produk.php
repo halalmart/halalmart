@@ -52,7 +52,7 @@
                                                                 <?php
                                                                 echo anchor(site_url('admin/toko_reseller/master/data_produk/edit/' . $u->id_product), '<button type="button" class="btn btn-warning btn-xs">Update</button>');
                                                                 echo '&nbsp';
-                                                                echo anchor(site_url('admin/toko_reseller/master/data_produk/delete/' . $u->id_product), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus Data?\')"');
+                                                                echo anchor(site_url('admin/toko_reseller/master/data_produk/delete/' . $u->id_product), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus ' . $u->name . '?\')"');
                                                                 ?>
                                                             </td>
                                                         </tr>

@@ -37,7 +37,7 @@
                                                                 <?php
                                                                 echo anchor(site_url('admin/toko_reseller/master/kategori_produk/edit/' . $u->category_id), '<button type="button" class="btn btn-warning btn-xs">Update</button>');
                                                                 echo '&nbsp';
-                                                                echo anchor(site_url('admin/toko_reseller/master/kategori_produk/delete/' . $u->category_id), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus Data?\')"');
+                                                                echo anchor(site_url('admin/toko_reseller/master/kategori_produk/delete/' . $u->category_id), '<button type="button" class="btn btn-danger btn-xs">Delete</button>', 'onclick="javasciprt: return confirm(\'Yakin Ingin Menghapus ' . $u->nama_kategori . '?\')"');
                                                                 ?>
                                                             </td>
                                                         </tr>
