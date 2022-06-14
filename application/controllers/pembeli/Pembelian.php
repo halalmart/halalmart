@@ -43,7 +43,7 @@ class Pembelian extends CI_Controller
         $name = $this->input->post('name');
         $foto = $this->input->post('foto');
         $quantity = $this->input->post('quantity');
-        $patner_price = $this->input->post('patner_price');
+        $price = $this->input->post('price');
         $created_at = $this->input->post('created_at');
         $updated_at = $this->input->post('updated_at');
         $data = array(
@@ -54,8 +54,8 @@ class Pembelian extends CI_Controller
             'name' => $name,
             'foto' => $foto,
             'quantity' => $quantity,
-            'patner_price' => $patner_price,
-            'created_at' => time(),
+            'patner_price' => $price,
+            'created_at' => time()
         );
         $this->M_cart->insert_cart($data, 'cart_item');
         redirect('pembeli/pembelian/show_cart/12345678');
@@ -100,10 +100,11 @@ class Pembelian extends CI_Controller
         redirect('pembeli/pembelian/show_cart/12345678');
     }
 
-    function show_cart($id_pembeli)
+    function show_cart($id_pembeli, $id_product)
     {
         $data['cart'] = $this->M_cart->get_data_by_id($id_pembeli)->result();
         $data['user'] = $this->M_r_pembeli->get_data_by_id($id_pembeli)->result();
+        $data['produk'] = $this->M_data_produk->get_data_by_id($id_product)->result();
         $this->load->view('pembeli/templates/header');
         $this->load->view('pembeli/templates/sidebar', $data);
         $this->load->view('pembeli/buy/cart', $data);

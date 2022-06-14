@@ -6,13 +6,13 @@
                 <img src="<?php echo base_url('upload/product/') . $u->foto; ?>" height="500" width="100" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <?php echo form_hidden('id_product', $u->id_product); ?>
+                    <?php echo form_hidden('price ', $u->price); ?>
                     <?php echo form_hidden('name', $u->name); ?>
                     <?php echo form_hidden('foto', $u->foto); ?>
-                    <?php echo form_hidden('patner_price ', $u->patner_price); ?>
                     <h5 class="card-title"><?= $u->name ?></h5>
                     <p class="card-text"><?= $u->desc ?></p>
                     <s class="card-text" style="color:red;" value="<?= $u->price ?>" name="price"><?= "Rp. " . number_format($u->price, 0, ',', '.') ?></s>
-                    <h4 class="card-text" value="<?= $u->patner_price ?>"><?= $u->patner_price ?></h4>
+                    <h4 class="card-text"><?= "Rp. " . number_format($u->patner_price, 0, ',', '.') ?></h4>
                     <p class="card-text barang" value="<?= $u->inventory_id  ?>" id="inventory_id">Jumlah Produk : <?= $u->inventory_id ?></p>
                     <p class="card-text ket" id="barang"></p>
                     <div class="input-group mb-3">
